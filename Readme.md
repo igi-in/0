@@ -1,5 +1,3 @@
-Oke, saya bikin versi **lebih ringkas, to the point, dan interaktif** untuk GitHub. Fokus ke perintah langsung, step-by-step, gampang dicopy-paste.
-
 ---
 
 # Redis & Postgres CLI Setup (Interactive)
@@ -28,17 +26,17 @@ make redis-cli
 cp src/redis-cli ../local/bin/
 
 # 5. Tes binary
-/app/local/bin/redis-cli --version
-file /app/local/bin/redis-cli
+redis-cli --version
+file redis-cli
 ```
 
 > Harus muncul: `ELF 64-bit LSB executable, ARM aarch64` jika di ARM64.
 
 ```bash
 # 6. Tes koneksi Redis server
-/app/local/bin/redis-cli -h redis.redis -p 6379 ping
-/app/local/bin/redis-cli -h redis.redis -p 6379 info memory
-/app/local/bin/redis-cli -h redis.redis -p 6379 info stats
+redis-cli -h redis.redis -p 6379 ping
+redis-cli -h redis.redis -p 6379 info memory
+redis-cli -h redis.redis -p 6379 info stats
 ```
 
 ---
