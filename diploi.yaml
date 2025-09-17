@@ -4,7 +4,20 @@
 
 diploiVersion: v1.0
 components:
-  - name: Node.js
-    identifier: node
+  - name: N8N
+    identifier: n8n
     package: https://github.com/diploi/component-nodejs#v24
-addons: []
+  - name: Worker
+    identifier: w1
+    package: https://github.com/diploi/component-nodejs#v24
+  - name: Worker
+    identifier: w2
+    package: https://github.com/diploi/component-nodejs#v24
+
+addons:
+  - name: "PostgreSQL"
+    identifier: "postgres"
+    package: "https://github.com/diploi/addon-postgres#main"
+  - name: "Redis"
+    identifier: "redis"
+    package: "https://github.com/diploi/addon-redis#main"

@@ -1,0 +1,6 @@
+{
+  "scripts": {
+    "dev": "node s.js",
+    "start": "node --watch s.js"
+  }
+}
