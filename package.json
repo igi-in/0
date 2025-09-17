@@ -1,8 +1,8 @@
 {
   "scripts": {
     "dev": "node s.js",
-    "pg" : "pgcli postgres://postgres:postgres@postgres.postgres:5432/app",
-    "psql" : "psql postgres://postgres:postgres@postgres.postgres:5432/app"
+    "pg": "pgcli postgres://postgres:postgres@postgres.postgres:5432/app",
+    "psql": "psql postgres://postgres:postgres@postgres.postgres:5432/app"
   },
   "dependencies": {
     "n8n": "^1.111.0"

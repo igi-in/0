@@ -5,14 +5,14 @@ const Redis = require('ioredis')                 // library Redis
 const chalk = require('chalk')                   // library untuk warna teks di console
 const { spawn } = require('child_process')       // jalankan perintah shell/CLI
 
+// ATUR KONFIGURASI ====================================================================================================================================================
+                                                                                                                                                                             
 // === KONFIGURASI FILE ENV & CUSTOM VARIABEL ===
-const ENV_FILE = '.env'                       // lokasi file .env (ubah sesuai path project kamu)
+const ENV_FILE = './.env'                       // lokasi file .env (ubah sesuai path project kamu)
 const CUSTOM_ENV = {                             // variabel ENV tambahan / override
   // N8N_RUNNERS_BROKER_PORT: '4001',              // contoh: worker pakai port 4001
-  // MY_CUSTOM_VAR: 'value123'                     // variabel custom tambahan
 }
 const ENV_EXCLUDE = [                           // list variabel ENV yang tidak dipakai
-  // 'N8N_REINSTALL_MISSING_PACKAGES',
   // 'N8N_DEFAULT_LOCALE'
 ]
 
@@ -34,6 +34,8 @@ const LOG_KEEP_LAST = 10                         // jumlah baris terakhir yang d
 // === FILE LOG OUTPUT ===
 const logFile = './s.log'
 let logStream = fs.createWriteStream(logFile, { flags: 'a' }) // buat stream untuk tulis log
+
+// END AND START====================================================================================================================================================
 
 // === Fungsi ROTATE LOG (buang log lama) ===
 function rotateLog() {

@@ -11,10 +11,8 @@ const { spawn } = require('child_process')       // jalankan perintah shell/CLI
 const ENV_FILE = '../.env'                       // lokasi file .env (ubah sesuai path project kamu)
 const CUSTOM_ENV = {                             // variabel ENV tambahan / override
   N8N_RUNNERS_BROKER_PORT: '4002',              // contoh: worker pakai port 4001
-  // MY_CUSTOM_VAR: 'value123'                     // variabel custom tambahan
 }
 const ENV_EXCLUDE = [                           // list variabel ENV yang tidak dipakai
-  'N8N_REINSTALL_MISSING_PACKAGES',
   // 'N8N_DEFAULT_LOCALE'
 ]
 

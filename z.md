@@ -41,7 +41,7 @@ pgcli postgres://postgres:postgres@postgres.postgres:5432/app
 
 http://localhost:3999
 
-
+#
 sudo apt-get install ccze
 tail -f s.log | ccze -A
 cat s.log | ccze -A && tail -f s.log | ccze -A
