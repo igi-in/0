@@ -68,14 +68,3 @@ cat s.log | ccze -A && tail -f s.log | ccze -A
 
 ---
 
-💡 **Tips Interaktif:**
-
-* Setelah `redis-cli` build, ketik `./local/bin/redis-cli` + tab → auto-complete command.
-* `pgcli` interaktif, ada syntax highlighting & history.
-* `tail -f s.log | ccze -A` langsung live update, cocok untuk debugging workflow n8n.
-
----
-
-Kalau mau, saya bisa buat **versi super interaktif**: tinggal copy-paste satu script `.sh` yang **langsung build redis-cli, cek binary, dan tes koneksi** secara otomatis, jadi cuma `bash setup.sh`.
-
-Apakah mau saya buatkan versi itu juga?
