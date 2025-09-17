@@ -1,50 +1,83 @@
-# ======== redis-cli
-1. Install Dependency (di Codespaces)
-bash
-sudo apt update
-sudo apt install build-essential tcl -
+Oke, saya bikin versi **lebih ringkas, to the point, dan interaktif** untuk GitHub. Fokus ke perintah langsung, step-by-step, gampang dicopy-paste.
 
-2. Download dan Build redis-cli Saja
-bash
+---
+
+# Redis & Postgres CLI Setup (Interactive)
+
+Panduan cepat untuk setup `redis-cli` lokal, `pgcli` Postgres, dan log styling.
+
+---
+
+## 🔹 Redis CLI (lokal, ARM/64-bit compatible)
+
+```bash
+# 1. Install dependency
+sudo apt update && sudo apt install build-essential tcl -y
+
+# 2. Download dan ekstrak Redis
 cd /app
 mkdir -p local/bin
 curl -O https://download.redis.io/redis-stable.tar.gz
 tar xzvf redis-stable.tar.gz
 cd redis-stable
 
-## Build hanya redis-cli
+# 3. Build hanya redis-cli
 make redis-cli
 
-3. Copy ke Folder Lokal
-bash
+# 4. Copy ke folder lokal
 cp src/redis-cli ../local/bin/
 
-4. Tes Binary
-bash
+# 5. Tes binary
 /app/local/bin/redis-cli --version
 file /app/local/bin/redis-cli
+```
 
-## Output harus mengandung: ELF 64-bit LSB executable, ARM aarch64 if aarch arm64 in your system
+> Harus muncul: `ELF 64-bit LSB executable, ARM aarch64` jika di ARM64.
 
-
-
-5. Tes Koneksi ke Redis Server
-bash
+```bash
+# 6. Tes koneksi Redis server
 /app/local/bin/redis-cli -h redis.redis -p 6379 ping
-/app/local/bin/redis-cli -h redis.redis -p 6379
 /app/local/bin/redis-cli -h redis.redis -p 6379 info memory
 /app/local/bin/redis-cli -h redis.redis -p 6379 info stats
+```
 
-# ========pgcli - postgres
-1. sudo apt-get install pgcli
+---
+
+## 🔹 Postgres CLI (`pgcli`)
+
+```bash
+# 1. Install pgcli
+sudo apt-get install pgcli -y
+
+# 2. Connect ke database
 pgcli postgres://postgres:postgres@postgres.postgres:5432/app
+```
 
+---
 
-# ======== Log Style
-## install
-sudo apt-get install ccze
-## Realtime Update
+## 🔹 Log Styling (Realtime, warna)
+
+```bash
+# Install ccze
+sudo apt-get install ccze -y
+
+# Realtime update logs
 tail -f s.log | ccze -A
-## Realtime Full Logs File
-cat s.log | ccze -A && tail -f s.log | ccze -A
 
+# Realtime + full file
+cat s.log | ccze -A && tail -f s.log | ccze -A
+```
+
+---
+
+💡 **Tips Interaktif:**
+
+* Setelah `redis-cli` build, ketik `./local/bin/redis-cli` + tab → auto-complete command.
+* `pgcli` interaktif, ada syntax highlighting & history.
+* `tail -f s.log | ccze -A` langsung live update, cocok untuk debugging workflow n8n.
+
+---
+
+Kalau mau, saya bisa buat **versi super interaktif**: tinggal copy-paste satu script `.sh` yang **langsung build redis-cli, cek binary, dan tes koneksi** secara otomatis, jadi cuma `bash setup.sh`.
+
+Apakah mau saya buatkan versi itu juga?
